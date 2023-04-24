@@ -1,0 +1,24 @@
+.user-list{
+    background-color: #f6f3f7;
+    .users{
+        .user-name{
+            font-weight: 500;
+        }
+        .user-email{
+            font-weight: 300;
+        }
+    }
+    
+    .search-user{
+        span{
+            width: 100%;
+        }
+        input{
+            width: 100%;
+        }
+        .user-header{
+            font-weight: 700;
+        }
+    }
+}
+

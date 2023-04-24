@@ -1,0 +1,35 @@
+<div *ngIf="!!users" class="container-fluid user-list py-3">
+
+  <div class="search-user p-3">
+    <h4 class="user-header">Lista degli utenti</h4>
+    <div class="search-user mx-3">
+      <span class="p-input-icon-left">
+        <i class="pi pi-search"></i>
+        <input type="text" pInputText [(ngModel)]="searchUser" placeholder="Cerca utente" />
+      </span>
+    </div>
+  </div>
+
+  <div class="row">
+    <div fxLayout="row wrap">
+      <div *ngFor="let user of users | filter: searchUser" fxFlex="20%" fxFlex.xs="50%" fxFlex.sm="33.3334%"
+        class="users p-2">
+        <p-card>
+          <div class="d-flex flex-column align-items-center">
+            <p-avatar [label]="user.firstName.charAt(0).toUpperCase()" styleClass="mr-2" size="xlarge"
+              shape="circle"></p-avatar>
+            <p appHighlight class="pt-2 mb-0 user-name">{{user.firstName}}&nbsp;{{user.lastName}}</p>
+            <small appHighlight class="user-email">{{user.email}}</small>
+          </div>
+
+        </p-card>
+      </div>
+    </div>
+
+    <div *ngIf="(users | filter: searchUser).length === 0" class="d-flex justify-content-center">
+      <h6>Non ci sono risultati.</h6>
+    </div>
+
+  </div>
+
+</div>

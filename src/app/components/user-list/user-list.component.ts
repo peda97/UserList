@@ -9,8 +9,14 @@ import { UserService } from 'src/app/services/user.service';
   templateUrl: './user-list.component.html',
   styleUrls: ['./user-list.component.scss']
 })
-export class UserListComponent {
+export class UserListComponent implements OnInit {
+  users!:User[];
+  searchUser = '';
 
-  constructor(){}
+  constructor(private userService: UserService){}
+
+  ngOnInit(): void {
+    this.userService.getUsers().subscribe(res => this.users = res);
+  }
 
 }
