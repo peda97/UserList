@@ -1,5 +1,7 @@
 .user-list{
-    background-color: #f6f3f7;
+    background: rgb(164,222,200);
+    background: radial-gradient(circle, rgba(164,222,200,1) 0%, rgba(240,192,227,1) 100%);
+    min-height: 100vh;
     .users{
         .user-name{
             font-weight: 500;
@@ -8,17 +10,24 @@
             font-weight: 300;
         }
     }
-    
+
     .search-user{
         span{
             width: 100%;
         }
         input{
             width: 100%;
+            border-radius: 30px;
+            &:hover{
+              border-color:#ced4da
+            }
+            &:focus{
+              box-shadow: none;
+              border-color: #ced4da;
+            }
         }
         .user-header{
             font-weight: 700;
         }
     }
 }
-
